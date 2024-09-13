@@ -22,7 +22,7 @@ pipeline {
                 // Run the Python script
                 bat '''
                     @echo off
-                    python script.py
+                    python -u script.py
                     if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
                     '''
             }
