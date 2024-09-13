@@ -20,7 +20,11 @@ pipeline {
         stage('Run Python Script') {
             steps {
                 // Run the Python script
-                bat 'python script.py'
+                bat '''
+                    @echo off
+                    python script.py
+                    if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
+                    '''
             }
         }
     }
