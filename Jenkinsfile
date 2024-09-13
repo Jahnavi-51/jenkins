@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the GitHub repository
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/Jahnavi-51/jenkins.git'
             }
         }
        
@@ -17,17 +17,10 @@ pipeline {
             }
         }
        
-        stage('Install Dependencies') {
-            steps {
-                // Install any required dependencies
-                bat 'pip install -r requirements.txt'
-            }
-        }
-       
         stage('Run Python Script') {
             steps {
                 // Run the Python script
-                bat 'python your_script.py'
+                bat 'python script.py'
             }
         }
     }
